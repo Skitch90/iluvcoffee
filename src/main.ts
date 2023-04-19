@@ -18,7 +18,10 @@ async function bootstrap() {
     }),
   );
   app.useGlobalFilters(new HttpExceptionFilter());
-  app.useGlobalInterceptors(new WrapResponseInterceptor(), new TimeoutInterceptor());
+  app.useGlobalInterceptors(
+    new WrapResponseInterceptor(),
+    new TimeoutInterceptor(),
+  );
   await app.listen(3000);
 }
 bootstrap();
