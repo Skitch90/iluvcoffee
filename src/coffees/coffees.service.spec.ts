@@ -21,8 +21,14 @@ describe('CoffeesService', () => {
       providers: [
         CoffeesService,
         { provide: DataSource, useValue: {} },
-        { provide: getRepositoryToken(Flavor), useValue: createMockRepository() },
-        { provide: getRepositoryToken(Coffee), useValue: createMockRepository() }
+        {
+          provide: getRepositoryToken(Flavor),
+          useValue: createMockRepository(),
+        },
+        {
+          provide: getRepositoryToken(Coffee),
+          useValue: createMockRepository(),
+        },
       ],
     }).compile();
 
